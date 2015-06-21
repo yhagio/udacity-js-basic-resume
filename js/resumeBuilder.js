@@ -143,12 +143,12 @@ work.display = function(){
   for(var i = 0; _this.jobs.length > i; i++){
     var employer = HTMLworkEmployer.replace('%data%', _this.jobs[i].employer);
     var title = HTMLworkTitle.replace('%data%', _this.jobs[i].title);
+    var empTitle = employer + title;
     var dates = HTMLworkDates.replace('%data%', _this.jobs[i].dates);
     var location = HTMLworkLocation.replace('%data%', _this.jobs[i].location);
     var desc = HTMLworkDescription.replace('%data%', _this.jobs[i].description);
 
-    $('.work-entry').append(employer);
-    $('.work-entry').append(title);
+    $('.work-entry').append(empTitle);
     $('.work-entry').append(dates);
     $('.work-entry').append(location);
     $('.work-entry').append(desc);
