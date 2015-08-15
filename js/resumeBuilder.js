@@ -164,13 +164,13 @@ var projects = {
       title: "HTML CSS Portfolio",
       dates: "2015-08",
       description: "Portfolio web site using semantic markups and vanilla stylesheets. No libraries or frameworks.",
-      images: ["../images/sample-one.jpeg"]
+      images: ["images/sample-one.jpeg"]
     },
     {
       title: "Resume Builder",
       dates: "2015-08",
       description: "Interactive resume with help of jQuery and vanilla JavaScript",
-      images: ["../images/sample-two.jpeg", "../images/sample-three.jpeg"]
+      images: ["images/sample-two.jpeg", "images/sample-three.jpeg"]
     }
   ]
 };
