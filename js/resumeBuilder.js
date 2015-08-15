@@ -14,7 +14,6 @@ var bio = {
   skills: ["HTML", "CSS", "Javascript"]
 };
 
-
 bio.display = function(){
   var formattedName = HTMLheaderName.replace("%data%", this.name);
   var formattedRole = HTMLheaderRole.replace("%data%", this.role);
@@ -27,16 +26,13 @@ bio.display = function(){
   var contactsLocation = HTMLlocation.replace("%data%", this.contacts.location);
 
   var bioPic = HTMLbioPic.replace("%data%", this.biopic);
-
   var welcomeMsg = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
 
   $("#header").prepend(formattedRole);
   $("#header").prepend(formattedName);
   $("#header").append(bioPic);
 
-  // $("#topContacts").append(contactsMobile);
   $("#topContacts").append(contactsEmail);
-  // $("#topContacts").append(contactsTwitter);
   $("#topContacts").append(contactsGithub);
   $("#topContacts").append(contactsBlog);
   $("#topContacts").append(contactsLocation);
@@ -49,6 +45,11 @@ bio.display = function(){
     $("#skills").append(skill);
     i++;
   }
+
+  $("#footerContacts").append(contactsEmail);
+  $("#footerContacts").append(contactsGithub);
+  $("#footerContacts").append(contactsBlog);
+  $("#footerContacts").append(contactsTwitter);
 };
 
 var education = {
@@ -92,7 +93,6 @@ education.display = function(){
       var aMajor = HTMLschoolMajor.replace("%data%", major);
       $(".education-entry").append(aMajor);
     });
-
   }
 
   $("#education").append(HTMLonlineClasses);
@@ -109,11 +109,8 @@ education.display = function(){
     $(".education-entry").append(classTitleSchool);
     $(".education-entry").append(classDate);
     $(".education-entry").append(classURL);
-
   }
-
 };
-
 
 var work = {
   jobs: [
@@ -134,8 +131,6 @@ var work = {
   ]
 };
 
-
-
 work.display = function(){
   $("#workExperience").append(HTMLworkStart);
 
@@ -153,10 +148,7 @@ work.display = function(){
     $(".work-entry").append(location);
     $(".work-entry").append(desc);
   }
-
-
-}
-
+};
 
 var projects = {
   projects: [
@@ -164,13 +156,13 @@ var projects = {
       title: "HTML CSS Portfolio",
       dates: "2015-08",
       description: "Portfolio web site using semantic markups and vanilla stylesheets. No libraries or frameworks.",
-      images: ["../images/sample-one.jpeg"]
+      images: ["images/sample-one.jpeg"]
     },
     {
       title: "Resume Builder",
       dates: "2015-08",
       description: "Interactive resume with help of jQuery and vanilla JavaScript",
-      images: ["../images/sample-two.jpeg", "../images/sample-three.jpeg"]
+      images: ["images/sample-two.jpeg", "images/sample-three.jpeg"]
     }
   ]
 };
@@ -197,22 +189,8 @@ projects.display = function(){
   }
 };
 
-bio.footerDisplay = function(){
-  var contactsEmail = HTMLemail.replace("%data%", bio.contacts.email);
-  var contactsGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-  var contactsBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-  var contactsTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-
-  $("#footerContacts").append(contactsEmail);
-  $("#footerContacts").append(contactsGithub);
-  $("#footerContacts").append(contactsBlog);
-  $("#footerContacts").append(contactsTwitter);
-}
-
-
 bio.display();
 education.display();
 work.display();
 projects.display();
 $("#mapDiv").append(googleMap);
-bio.footerDisplay();

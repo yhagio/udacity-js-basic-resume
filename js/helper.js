@@ -65,7 +65,7 @@ The International Name challenge in Lesson 2 where you'll create a function that
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
-    $('#name').html(iName);  
+    $('#name').html(iName);
   });
 });
 
@@ -81,15 +81,7 @@ function logClicks(x,y) {
       y: y
     }
   );
-  console.log('x location: ' + x + '; y location: ' + y);
 }
-
-$(document).click(function(loc) {
-  console.log(loc.pageX, loc.pageY);
-});
-
-
-
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.
 See the documentation below for more details.
